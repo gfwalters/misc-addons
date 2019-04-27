@@ -17,9 +17,9 @@ class BinaryExtended(Binary):
         return werkzeug.utils.redirect(url, code=301)
 
     @route()
-    def content_image(self, xmlid=None, model='ir.attachment', id=None, field='datas', filename_field='datas_fname', unique=None, filename=None, mimetype=None, download=None, width=0, height=0):
+    def content_image(self, xmlid=None, model='ir.attachment', id=None, field='datas', filename_field='datas_fname', unique=None, filename=None, mimetype=None, download=None, width=0, height=0, crop=False, access_token=None):
 
-        res = super(BinaryExtended, self).content_image(xmlid, model, id, field, filename_field, unique, filename, mimetype, download, width, height)
+        res = super(BinaryExtended, self).content_image(xmlid, model, id, field, filename_field, unique, filename, mimetype, download, width, height, crop, access_token)
 
         # TODO: if model=="product.product" and field in ('image', 'image_small', 'image_medium')
         # we need to make similar trick, because those fields are computed resizes of image_variant
